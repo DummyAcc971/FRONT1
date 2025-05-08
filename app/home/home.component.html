@@ -1,0 +1,112 @@
+<div class="page-container"> <!-- Matches structure expected by CSS -->
+    <header class="app-header">
+        <div class="logo">
+            Stox<span class="logo-accent">Flick</span>
+          </div>
+      <nav>
+        <ul>
+          <!-- Use routerLinkActive for active styling -->
+          <!-- Use [routerLinkActiveOptions]="{exact: true}" for the base home route -->
+          <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+          <li><a routerLink="/market" routerLinkActive>Market</a></li> <!-- Assuming /market route exists -->
+          <li><a routerLink="/analytics" routerLinkActive>Analytics</a></li> <!-- Assuming /analytics route exists -->
+          <li><a routerLink="/contact" routerLinkActive>Contact</a></li> <!-- Assuming /contact route exists -->
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="btn btn-secondary" routerLink="/login">Login</button>
+        <button class="btn btn-primary" routerLink="/signup">Sign Up</button>
+      </div>
+    </header>
+  
+    <main class="hero-section">
+      <div>
+      <h1>Welcome to StoxFlick</h1>
+      <p>Your premium stock market dashboard for intelligent investing and market analysis.</p>
+      <div class="search-container">
+        <form class="search-form" (ngSubmit)="searchStock()">
+          <input
+            type="text"
+            name="stockSymbol"
+            [(ngModel)]="searchSymbol"
+            placeholder="Enter stock symbols (e.g., AAPL,MSFT,TSLA)"
+            aria-label="Stock Symbol Search"
+            class="search-input"
+          />
+          <button type="submit" class="btn btn-primary" [disabled]="isSearchDisabled">Search</button>
+        </form>
+      </div>
+      <div id="chartModal" class="modal" [class.show]="isModalOpen" (click)="closeModal($event)">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <span class="close" (click)="closeModal()">&times;</span>
+          
+          <p id="loading" *ngIf="isLoading" style="font-style: italic;">Loading stock data...</p>
+          <canvas id="stockChart"></canvas>
+        </div>
+      </div>
+
+      <p class="guest-info" style="font-size: medium;">
+          As a guest, you can search for stock's trend
+          <a routerLink="/signup">Sign up</a> for the stock details and more.
+      </p>
+  
+    <section class="features-section">
+        <div class="feature-card">
+            <div class="icon search-icon" aria-hidden="true"></div>
+            <h3>Search any stock symbol</h3>
+            <p>Get detailed information on thousands of stocks instantly.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon data-icon" aria-hidden="true"></div>
+            <h3>Real-time market data</h3>
+            <p>Stay updated with the latest market movements.</p>
+        </div>
+        <div class="feature-card">
+             <div class="icon chart-icon" aria-hidden="true"></div>
+            <h3>Interactive Charts</h3>
+            <p>Analyze stock performance with dynamic charts.</p>
+        </div>
+    </section>
+</div>
+</main>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+          <div class="quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Market</a></li>
+              <li><a href="#">Analytics</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="connect-with-us">
+            <h4>Connect With Us</h4>
+
+            <p>Follow us on social media for updates.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+          </div>
+          <div class="copyright">
+            <p>© 2025 StoxFlick. All rights reserved.</p>
+            <p>Data provided for informational purposes only.</p>
+          </div>
+        </div>
+      </footer>
+    
+  </div>

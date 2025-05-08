@@ -1,0 +1,171 @@
+/* src/app/login/login.component.css */
+/* Based on the second image */
+.auth-container {
+    background-image: url('https://content.schwab.com/web/login/login-background-hq.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    width: 100%;
+  }
+  .background {
+  background-image: url('https://content.schwab.com/web/login/login-background-hq.png');
+  background-size: cover;
+  background-position: center;
+  }
+  
+  .login-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 2.5rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px; /* Max width of the login box */
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .login-box p {
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    font-size: 1rem;
+  }
+  
+  /* Form styling within the box */
+  .login-box form .form-group {
+    margin-bottom: 1.2rem;
+    text-align: left; /* Align labels left */
+  }
+  
+  .login-box form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #495057;
+  }
+  
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-wrapper input {
+    padding-right: 2.5rem; /* Make space for the icon */
+    /* Inherits .form-group input styles from global css */
+  }
+  
+  .input-wrapper .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    width: 20px; /* Explicit width */
+    height: 20px; /* Explicit height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* TODO: Add actual icon background/image/font-icon class */
+  }
+  
+  /* Placeholder Icons */
+  .input-wrapper .user-icon::before { content: '👤'; }
+  .input-wrapper .lock-icon::before { content: '🔒'; }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between; /* Puts remember me on the left */
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    color: #495057;
+  }
+  
+  .remember-me input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+  
+  .btn-sign-in {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #174a8a; /* Darker blue variant from image */
+    border-color: #174a8a;
+    margin-bottom: 1.5rem;
+  }
+  .btn-sign-in:hover {
+    background-color: #113768; /* Even darker on hover */
+    border-color: #113768;
+  }
+  .btn-sign-in:disabled {
+      background-color: #6c8ebf;
+      border-color: #6c8ebf;
+  }
+  
+  
+  .forgot-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .forgot-links a {
+    color: var(--primary-color); /* Use standard link color */
+  }
+  
+  .security-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+  }
+  
+  .security-info a {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: flex; /* Align text and arrow */
+    justify-content: space-between; /* Push arrow to the right */
+    align-items: center;
+  }
+  .security-info a:hover {
+      color: var(--primary-color);
+  }
+  .security-info .dropdown-arrow {
+      font-size: 0.7rem;
+  }
+  
+  .signup-link {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+  }
+  
+  .signup-link a {
+    font-weight: bold;
+    color: var(--primary-color);
+  }

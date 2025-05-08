@@ -1,0 +1,77 @@
+<!-- src/app/login/login.component.html -->
+<div class="auth-container">
+<div class="login-container"> <!-- Add background/styling via CSS -->
+    <div class="login-box">
+      <h2>Login to StoxFlick</h2>
+      <p>Real-time market insights at your fingertips</p>
+  
+      <!-- Use ngSubmit on the form -->
+      <form #loginForm="ngForm" (ngSubmit)="signIn()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="input-wrapper">
+            <!-- Use ngModel for two-way binding -->
+            <input type="text" id="username" name="username" [(ngModel)]="username" placeholder="Enter username" required #userField="ngModel">
+            <span class="icon user-icon"></span> <!-- Add icon class/image -->
+          </div>
+           <!-- Basic Validation Example -->
+           <div *ngIf="userField.invalid && (userField.dirty || userField.touched)" class="error-message">
+              Username is required.
+           </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Enter password" required #passField="ngModel">
+            <span class="icon lock-icon"></span> <!-- Add icon class/image -->
+          </div>
+           <!-- Basic Validation Example -->
+           <div *ngIf="passField.invalid && (passField.dirty || passField.touched)" class="error-message">
+              Password is required.
+           </div>
+        </div>
+  
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe"> Remember me
+          </label>
+        </div>
+  
+        <!-- Disable button if form is invalid -->
+        <button type="submit" class="btn btn-primary btn-sign-in" [disabled]="!loginForm.form.valid">Sign In</button>
+  
+        <!-- <div class="security-message">
+            <button (click)="toggleExpand()" class="toggle-button">
+              <span class="lock-icon">🔒</span>
+              <span class="message">Security Information</span>
+              <span class="arrow" [class.expanded]="isExpanded">▼</span>
+            </button>
+            
+            <div class="security-details" [class.expanded]="isExpanded">
+              <p>
+                StoxFlick uses industry-standard security protocols to protect your information. We never store sensitive financial data or passwords in plain text.
+              </p>
+              <ul>
+                <li>Two-factor authentication available for account protection</li>
+                <li>Automatic sign-out after 15 minutes of inactivity</li>
+                <li>Encrypted connection with 256-bit SSL</li>
+                <li>Regular security audits and testing</li>
+              </ul>
+              <p class="warning">
+                Never share your login credentials or respond to emails requesting your password.
+              </p>
+            </div>
+          </div> -->
+  
+      </form>
+       <p class="signup-link">
+          Don't have an account? <a routerLink="/signup">Sign Up</a>
+       </p>
+    </div>
+  </div>
+  </div>
+  
+  <!-- NOTE: You need to add the corresponding CSS from your second image -->
+  <!-- into src/app/login/login.component.css -->
+  <!-- Make sure icon classes (e.g., .user-icon) are defined there or globally -->
